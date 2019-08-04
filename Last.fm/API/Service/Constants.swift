@@ -21,6 +21,7 @@ struct K {
         static let apiKey = "api_key"
         static let format = "format"
         static let method = "method"
+        static let album = "album"
     }
 }
 

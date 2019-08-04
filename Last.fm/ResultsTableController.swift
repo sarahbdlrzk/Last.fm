@@ -31,13 +31,29 @@ class ResultsTableController: UITableViewController {
 
 extension ResultsTableController {
     
-    override func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let selectedArtist = self.artists[indexPath.row]
         // Set up the detail view controller to show.
-        let detailViewController = DetailViewController.detailViewControllerForArtist(selectedArtist)
-        navigationController?.pushViewController(detailViewController, animated: true)
-        tableView.deselectRow(at: indexPath, animated: false)
+        
+        if let artistName = selectedArtist.name {
+            APIClient.getTopAlbums(name: artistName) { (result) in
+                switch result {
+                case .success(let data):
+                    DispatchQueue.main.async {
+                        let detailViewController = DetailViewController.detailViewControllerForArtist(
+                            data, artistName: artistName)
+                        self.navigationController?.pushViewController(detailViewController, animated: true)
+                        tableView.deselectRow(at: indexPath, animated: false)
+                    }
+                case .failure(let error):
+                    print(error)
+                }
+            }
+        }
+        
+   
     }
+     
 }
 
 // MARK: - UITableViewDataSource

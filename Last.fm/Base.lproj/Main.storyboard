@@ -54,6 +54,21 @@
             </objects>
             <point key="canvasLocation" x="1025" y="-23"/>
         </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="t9v-8m-iqW">
+            <objects>
+                <viewController storyboardIdentifier="DetailViewController" id="W0h-fo-Bes" customClass="DetailViewController" customModule="Last_fm" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cXd-74-C42">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="35W-l5-eeR"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Czg-zO-ioW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1827" y="-45"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="Cug-Lu-Ug3">
             <objects>

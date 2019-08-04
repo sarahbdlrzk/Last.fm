@@ -7,15 +7,15 @@
 //
 
 import Foundation
-
+import RealmSwift
 /**
- Struct that represent the Artist data.
+ Class that represent the Artist data.
  */
-struct Artist: Codable {
+class Artist: Object, Codable {
     
-    let name: String
-    let listeners: String
-    let mbid: String
-    let url: String
-    let streamable: String
+    let name: String?
+    let listeners: String?
+    let mbid: String?
+    let url: String?
+    let streamable: String?
 }
